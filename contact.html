@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriConnect Summit 2026 - Inscription & Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <header id="navbar">
+        <nav>
+            <a href="index.html" class="logo">AfriConnect Summit 2026</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Changer de thème">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+                <button id="hamburger" aria-label="Ouvrir le menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============ HERO INTERNE ============ -->
+        <section class="page-hero">
+            <h1>Inscription & Contact</h1>
+            <nav aria-label="Fil d'Ariane" class="breadcrumb">
+                <a href="index.html">Accueil</a> &gt; <span>Contact</span>
+            </nav>
+        </section>
+
+        <!-- ============ FORMULAIRE + INFOS ============ -->
+        <section class="contact-section">
+            <!-- Colonne formulaire -->
+            <form id="registration-form" class="registration-form" novalidate>
+                <h2>Formulaire d'inscription</h2>
+
+                <div class="form-group">
+                    <label for="fullname">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <span class="error-message" id="fullname-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="participation-type">Type de participation</label>
+                    <select id="participation-type" name="participation-type" required>
+                        <option value="">-- Choisissez --</option>
+                        <option value="visiteur">Visiteur</option>
+                        <option value="intervenant">Intervenant</option>
+                        <option value="sponsor">Sponsor</option>
+                        <option value="presse">Presse</option>
+                    </select>
+                    <span class="error-message" id="participation-type-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Pays africain</label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Choisissez --</option>
+                        <option value="senegal">Sénégal</option>
+                        <option value="ghana">Ghana</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="maroc">Maroc</option>
+                        <option value="cote-ivoire">Côte d'Ivoire</option>
+                        <option value="afrique-sud">Afrique du Sud</option>
+                        <option value="kenya">Kenya</option>
+                        <option value="cameroun">Cameroun</option>
+                        <option value="tunisie">Tunisie</option>
+                        <option value="mali">Mali</option>
+                        <option value="rwanda">Rwanda</option>
+                    </select>
+                    <span class="error-message" id="country-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Motivation</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Envoyer mon inscription</button>
+
+                <!-- Message de succès affiché par JS après validation -->
+                <p class="success-message" id="success-message"></p>
+            </form>
+
+            <!-- Colonne informations -->
+            <aside class="contact-info">
+                <h2>Informations pratiques</h2>
+                <p><i class="bi bi-geo-alt"></i> Centre International de Conférences, Dakar, Sénégal</p>
+                <p><i class="bi bi-calendar-event"></i> 12 - 14 Novembre 2026</p>
+                <p><i class="bi bi-envelope"></i> contact@africonnectsummit.com</p>
+                <p><i class="bi bi-telephone"></i> +221 33 000 00 00</p>
+            </aside>
+        </section>
+
+        <!-- ============ FAQ EN ACCORDÉON CSS PUR ============ -->
+        <section class="faq-section">
+            <h2>Questions fréquentes</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq1" class="accordion-toggle">
+                    <label for="faq1" class="accordion-header">Comment obtenir mon badge d'accès ?</label>
+                    <div class="accordion-content">
+                        <p>Votre badge vous sera envoyé par email après validation de votre inscription. Présentez-le à l'accueil le jour J.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq2" class="accordion-toggle">
+                    <label for="faq2" class="accordion-header">L'inscription est-elle payante ?</label>
+                    <div class="accordion-content">
+                        <p>L'inscription visiteur est gratuite. Les places intervenants et sponsors sont soumises à validation par l'organisation.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq3" class="accordion-toggle">
+                    <label for="faq3" class="accordion-header">Puis-je annuler mon inscription ?</label>
+                    <div class="accordion-content">
+                        <p>Oui, contactez-nous par email au moins 7 jours avant l'événement pour annuler ou modifier votre inscription.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq4" class="accordion-toggle">
+                    <label for="faq4" class="accordion-header">Y a-t-il un hébergement partenaire ?</label>
+                    <div class="accordion-content">
+                        <p>Oui, une liste d'hôtels partenaires avec tarifs préférentiels est disponible sur demande par email.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq5" class="accordion-toggle">
+                    <label for="faq5" class="accordion-header">Le site est-il accessible aux personnes à mobilité réduite ?</label>
+                    <div class="accordion-content">
+                        <p>Oui, le Centre International de Conférences est entièrement accessible aux personnes à mobilité réduite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CARTE GOOGLE MAPS ============ -->
+        <section class="map-section">
+            <h2>Nous trouver</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.0!2d-17.4676861!3d14.7167163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDakar%2C+S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localisation AfriConnect Summit - Dakar, Sénégal">
+            </iframe>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>AfriConnect Summit</h4>
+                <p>La conférence tech panafricaine qui réunit développeurs, entrepreneurs et investisseurs.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liens rapides</h4>
+                <a href="index.html">Accueil</a>
+                <a href="programme.html">Programme</a>
+                <a href="intervenants.html">Intervenants</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        <button id="back-to-top" aria-label="Retour en haut de la page">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
