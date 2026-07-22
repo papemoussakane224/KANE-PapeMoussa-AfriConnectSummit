@@ -97,3 +97,73 @@ backToTop.addEventListener('click', () => {
 
 const yearSpan = document.getElementById('year');
 yearSpan.textContent = new Date().getFullYear();
+/* ===================================================
+   ANIMATIONS AU SCROLL (IntersectionObserver)
+=================================================== */
+
+// On sélectionne tous les éléments à animer
+const animatedElements = document.querySelectorAll('.animate-in');
+
+// On crée l'observateur
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // On arrête d'observer une fois l'animation jouée (évite de la rejouer)
+            scrollObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15 // se déclenche quand 15% de l'élément est visible
+});
+
+// On observe chaque élément
+animatedElements.forEach(el => {
+    scrollObserver.observe(el);
+});
+
+
+/* ===================================================
+   COMPTEURS ANIMÉS (chiffres clés)
+=================================================== */
+
+const statNumbers = document.querySelectorAll('.stat-number');
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 secondes
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(progress * target);
+
+        element.textContent = currentValue;
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target; // valeur finale exacte
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+}
+
+// On déclenche l'animation uniquement quand la section stats devient visible
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            statNumbers.forEach(number => animateCounter(number));
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+const statsSection = document.querySelector('.stats');
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
